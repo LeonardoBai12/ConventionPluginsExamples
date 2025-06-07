@@ -24,6 +24,7 @@ coil = "2.0.0-rc01"
 runner = "1.0.2"
 espressoCoreVersion = "3.0.2"
 appcompatV7 = "28.0.0"
+jacoco = "0.8.11"
 
 [libraries]
 # Kotlin - Coroutines
@@ -66,3 +67,4 @@ application = { id = "com.android.application", version.ref = "agp" }
 library = { id = "com.android.library", version.ref = "agp" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jacoco = { id = "jacoco", version.ref = "jacoco" }

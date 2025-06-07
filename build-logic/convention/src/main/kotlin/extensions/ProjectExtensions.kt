@@ -85,3 +85,13 @@ private fun Project.configureKotlin() {
         }
     }
 }
+
+/**
+ * Determines if the project is a JVM project.
+ *
+ * @receiver The project to determine if it is a JVM project.
+ * @return True if the project is a JVM project, false otherwise.
+ */
+fun Project.isJvm(): Boolean {
+    return this.plugins.hasPlugin("io.lb.jvm.library")
+}

@@ -35,5 +35,17 @@ gradlePlugin {
             id = "io.lb.android.app"
             implementationClass = "AndroidAppConventionPlugin"
         }
+        register("JacocoJvmConventionPlugin") {
+            id = "io.lb.jacoco.jvm.module"
+            implementationClass = "JacocoJvmConventionPlugin"
+        }
+        register("JacocoAndroidConventionPlugin") {
+            id = "io.lb.jacoco.android.module"
+            implementationClass = "JacocoAndroidConventionPlugin"
+        }
+        register("JacocoMultiModuleConventionPlugin") {
+            id = "io.lb.jacoco.multi-module"
+            implementationClass = "JacocoMultiModuleConventionPlugin"
+        }
     }
 }
