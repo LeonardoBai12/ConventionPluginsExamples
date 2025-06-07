@@ -35,5 +35,9 @@ gradlePlugin {
             id = "io.lb.android.app"
             implementationClass = "AndroidAppConventionPlugin"
         }
+        register("DetektConventionPlugin") {
+            id = "io.lb.detekt"
+            implementationClass = "DetektConventionPlugin"
+        }
     }
 }

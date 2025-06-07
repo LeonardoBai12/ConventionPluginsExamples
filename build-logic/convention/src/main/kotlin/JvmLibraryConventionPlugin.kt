@@ -22,6 +22,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.jvm")
                 apply("org.jetbrains.kotlin.plugin.serialization")
+                apply("io.lb.detekt")
             }
 
             extensions.configure<KotlinJvmProjectExtension> {
