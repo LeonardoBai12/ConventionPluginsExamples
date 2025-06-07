@@ -19,6 +19,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.dokka.gradlePlugin)
 }
 
 gradlePlugin {
@@ -46,6 +47,9 @@ gradlePlugin {
         register("JacocoMultiModuleConventionPlugin") {
             id = "io.lb.jacoco.multi-module"
             implementationClass = "JacocoMultiModuleConventionPlugin"
+        register("DokkaConventionPlugin") {
+            id = "io.lb.dokka"
+            implementationClass = "DokkaConventionPlugin"
         }
     }
 }
