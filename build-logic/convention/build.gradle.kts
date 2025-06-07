@@ -19,6 +19,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.dokka.gradlePlugin)
 }
 
 gradlePlugin {
@@ -34,6 +35,10 @@ gradlePlugin {
         register("AndroidAppConventionPlugin") {
             id = "io.lb.android.app"
             implementationClass = "AndroidAppConventionPlugin"
+        }
+        register("DokkaConventionPlugin") {
+            id = "io.lb.dokka"
+            implementationClass = "DokkaConventionPlugin"
         }
     }
 }
