@@ -24,6 +24,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.plugin.serialization")
                 apply("io.lb.jacoco.jvm.module")
                 apply("io.lb.dokka")
+                apply("io.lb.detekt")
             }
 
             extensions.configure<KotlinJvmProjectExtension> {

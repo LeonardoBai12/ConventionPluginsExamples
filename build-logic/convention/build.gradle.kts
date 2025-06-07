@@ -47,9 +47,14 @@ gradlePlugin {
         register("JacocoMultiModuleConventionPlugin") {
             id = "io.lb.jacoco.multi-module"
             implementationClass = "JacocoMultiModuleConventionPlugin"
+        }
         register("DokkaConventionPlugin") {
             id = "io.lb.dokka"
             implementationClass = "DokkaConventionPlugin"
+        }
+        register("DetektConventionPlugin") {
+            id = "io.lb.detekt"
+            implementationClass = "DetektConventionPlugin"
         }
     }
 }

@@ -46,3 +46,13 @@ fun DependencyHandlerScope.androidTestImplementation(name: Provider<MinimalExter
 fun DependencyHandlerScope.debugImplementation(name: Provider<MinimalExternalModuleDependency>) {
     add("debugImplementation", name)
 }
+
+/**
+ * Adds a detekt plugin dependency to the project.
+ *
+ * @receiver The dependency handler scope to add the dependency to.
+ * @param name The name of the dependency to add.
+ */
+fun DependencyHandlerScope.detektPlugins(name: Provider<MinimalExternalModuleDependency>) {
+    add("detektPlugins", name)
+}
