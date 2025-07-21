@@ -17,28 +17,48 @@ class DokkaConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply("org.jetbrains.dokka")
-
             tasks.withType<DokkaTaskPartial> {
                 dokkaSourceSets.configureEach {
+                    // Configure module naming based on project path
                     val relativePath = project.projectDir
                         .relativeTo(rootProject.projectDir)
                         .path
                         .replace(File.separator, ":")
                     moduleName.set(relativePath)
 
+                    // Enable reporting of undocumented code
                     reportUndocumented.set(true)
 
+                    // Suppress documentation based on packages names
                     perPackageOption {
                         matchingRegex.set(".*di.*")
                         suppress.set(true)
                     }
 
+                    // Skips classes marked as @Deprecated
+                    skipDeprecated.set(true)
+
+                    // Sets the visibility of documented elements
+                    documentedVisibilities.set(
+                        setOf(
+                            DokkaConfiguration.Visibility.PUBLIC,
+                            DokkaConfiguration.Visibility.INTERNAL,
+                            DokkaConfiguration.Visibility.PRIVATE
+                        )
+                    )
+
+                    // Include module-specific documentation files
                     if (file("Packages.md").exists()) {
                         includes.from("Packages.md")
                     }
                     if (file("Module.md").exists()) {
                         includes.from("Module.md")
                     }
+
+                    // Skips empty packages, even though they are documented in Packages.md
+                    skipEmptyPackages.set(true)
+
+                    // Configure which code visibility levels to document
                     documentedVisibilities.set(
                         setOf(
                             DokkaConfiguration.Visibility.PUBLIC,
